@@ -1,0 +1,56 @@
+{
+  "name": "instastart",
+  "productName": "InstaStart",
+  "version": "0.1.1",
+  "description": "Open your project workspace and run its Windows setup commands with one click.",
+  "main": ".webpack/main/index.cjs",
+  "private": true,
+  "author": "InstaStart contributors",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24.15 <25"
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests",
+    "format": "prettier --write src tests *.cjs *.json README.md RUNNING.md",
+    "test": "vitest run",
+    "test:unit": "vitest run",
+    "verify": "npm run typecheck && npm run lint && npm test",
+    "build:ui": "webpack --config webpack.preview.cjs --mode production"
+  },
+  "config": {
+    "forge": "./forge.config.cjs"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "8.0.1",
+    "@electron-forge/maker-squirrel": "8.0.1",
+    "@electron-forge/maker-zip": "8.0.1",
+    "@electron-forge/plugin-webpack": "8.0.1",
+    "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "css-loader": "^7.1.2",
+    "electron": "44.7.2",
+    "eslint": "^9.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "prettier": "^3.6.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "5.0.4",
+    "webpack": "^5.100.0",
+    "webpack-cli": "^6.0.0"
+  }
+}

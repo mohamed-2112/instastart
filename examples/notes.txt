@@ -1,0 +1,9 @@
+InstaStart demo notes
+
+Use this file as a Notes resource in your first workspace.
+
+Try two Command Prompt steps:
+1. echo Starting my workspace
+2. dir
+
+They should run in order and appear in the launch output.
